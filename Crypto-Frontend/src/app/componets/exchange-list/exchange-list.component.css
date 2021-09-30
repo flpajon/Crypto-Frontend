@@ -1,0 +1,11 @@
+.card:hover {
+    box-shadow: 0 0 5px 5px black;
+}
+
+.card {
+    border-radius: 10%;
+}
+
+.card-img-top {
+    border-radius: 10%;
+}

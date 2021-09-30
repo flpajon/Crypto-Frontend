@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="overlay" *ngIf="cargando">
+    <div class="spinner-wrapper">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container m-5">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-sm-3 m-2" *ngFor="let asset of assetList">
+      <div class="card border-secondary" (click)="showExchange()">
+        <img [src]="asset.img" class="card-img-top" *ngIf="asset.img != ''">
+        <img src="../../../../assets/noimage.png" class="card-img-top" *ngIf="asset.img == ''">
+        <div class=" card-body">
+          <h5 class="card-title text-aling-center">{{asset.name}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

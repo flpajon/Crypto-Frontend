@@ -1,0 +1,19 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">Confirmar Compra</h5>
+    </div>
+    <div class="modal-body text-center">
+        <h6>Criptomoneda: {{transaction.asset}}</h6>
+        <h6>Exchange: {{transaction.exchange}}</h6>
+        <div class="jumbotron">
+            <p>Precio unitario: {{transaction.unitPrice}} USD</p>
+            <p>Precio x cantidad: {{transaction.unitPriceXamount}} USD</p>
+            <p>Comision: {{transaction.commission}} USD</p>
+            <h3>Costo final: {{transaction.totalCost}} USD</h3>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="close(false)">Cancelar</button>
+        <button type="button" class="btn btn-dark" (click)="close(true)">Confirmar</button>
+    </div>
+</div>

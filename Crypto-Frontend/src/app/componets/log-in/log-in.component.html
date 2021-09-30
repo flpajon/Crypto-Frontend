@@ -1,0 +1,28 @@
+<div class="wrapper" *ngIf="cargando">
+  <div class="overlay" >
+    <div class="spinner-wrapper">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center divcenter">
+  <div class="card border-secondary" style="width: 18rem;">
+    <div class="card-body">
+      <div class="card-title m-3 mb-4">
+        <h3 class="row justify-content-center">Iniciar Sesion</h3>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Usuario" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="user">
+      </div>
+      <div class="input-group">
+        <input type="password" class="form-control" placeholder="Contraseña" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="password">
+      </div>
+    </div>
+    <button type="button" class="btn btn-dark btn-sm btn-block m-3" (click)="logIn()">Iniciar Sesion</button>
+  </div>
+</div>

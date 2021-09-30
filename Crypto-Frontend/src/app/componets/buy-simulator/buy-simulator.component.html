@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class="overlay" *ngIf="cargando">
+    <div class="spinner-wrapper">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3 for="inputEmail4" class="form-label">Detalle de Criptomoneda</h3>
+  <form class="row jumbotron">
+    <div class="col-md-8">
+      <label class="form-label">Criptomoneda</label>
+      <select class="form-select" [(ngModel)]="selectedAsset" [compareWith]="selectedItem"
+        [ngModelOptions]="{standalone: true}" (change)="getAssetRate()">
+        <option [ngValue]="asset" *ngFor="let asset of assetList">{{asset.name}}</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Tarifa USD</label>
+      <input type="text" class="form-control" disabled [(ngModel)]="selectedAsset.rate"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="col-md-6 mt-4">
+      <label class="form-label">Unidades a comprar</label>
+      <input type="number" class="form-control" [(ngModel)]="cantidad" [ngModelOptions]="{standalone: true}">
+    </div>
+  </form>
+
+  <h3 class="form-label">Detalle de Exchange</h3>
+  <form class="row jumbotron">
+    <div class="col-md-10">
+      <label class="form-label">Exchange</label>
+      <select class="form-select" [(ngModel)]="selectedExchange" [compareWith]="selectedItem"
+        [ngModelOptions]="{standalone: true}" (change)="getExchange">
+        <option [ngValue]="exchange" *ngFor="let exchange of exchangeList">{{exchange.name}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">Comisión %</label>
+      <input type="text" class="form-control" disabled [(ngModel)]="selectedExchange.commission"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+  </form>
+
+  <form class="row">
+    <div class="d-grid gap-2 col-4 mx-auto">
+      <button class="btn btn-outline-dark" type="button" (click)="simulateBuy()">Comprar</button>
+    </div>
+  </form>
+</div>
